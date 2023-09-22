@@ -31,13 +31,13 @@ ADD FOREIGN KEY (고객ID) REFERENCES 고객(고객ID);
 
 -- 극장 데이터 삽입
 INSERT INTO 극장 (극장ID, 극장명, 위치)
-VALUES (1, '극장 A', '서울'), (2, '극장 B', '대구'), (3, '극장 C', '부산');
+VALUES (1, '메가박스', '서울'), (2, 'CGV', '대구'), (3, '롯데시네마', '부산');
 
 -- 고객 데이터 삽입
 INSERT INTO 고객 (고객ID, 이름, 이메일)
-VALUES (1, '고객1', 'customer1@example.com'),
-       (2, '고객2', 'customer2@example.com'),
-       (3, '고객3', 'customer3@example.com');
+VALUES (1, '차지용', 'chaJY@naver.com'),
+       (2, '이인협', 'leeIH@gmail.com'),
+       (3, '방예혁', 'bangYH@daum.com');
 
 -- 예약 데이터 삽입
 INSERT INTO 예약 (예약ID, 극장ID, 고객ID, 예약일)
