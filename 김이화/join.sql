@@ -1,6 +1,6 @@
 SELECT *
 FROM reservation
-LEFT JOIN theater
+JOIN theater
 ON reservation.theater_id = theater.id;
 
 SELECT *

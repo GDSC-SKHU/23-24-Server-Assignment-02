@@ -1,39 +1,39 @@
 CREATE TABLE theater (
-    id INTEGER PRIMARY KEY,
+    id INTEGER PRIMARY KEY AUTO_INCREMENT,
     name TEXT,
     location TEXT
 );
 
 CREATE TABLE reservation (
-	id INTEGER PRIMARY KEY,
-	date INTEGER,
+	id INTEGER PRIMARY KEY AUTO_INCREMENT,
+	date DATE,
     theater_id INTEGER,
-    theater_name TEXT,
     customer_id INTEGER,
-    customer_name TEXT
+    foreign key (theater_id) references theater(id),
+    foreign key (customer_id) references customer(id)
 	);
     
     CREATE TABLE customer (
-	id INTEGER PRIMARY KEY,
+	id INTEGER PRIMARY KEY AUTO_INCREMENT,
     name TEXT,
     email TEXT
     );
        
-INSERT INTO theater (id, name, location)
-VALUES (1, 'cgv', '서울'),
-       (2, '롯데시네마', '대구'),
-       (3, '메가박스', '부산');
+INSERT INTO theater (name, location)
+VALUES ('cgv', '서울'),
+       ('롯데시네마', '대구'),
+       ('메가박스', '부산');
 
-INSERT INTO reservation (id, date, theater_id, theater_name, customer_id, customer_name)
-VALUES (1, '2023-09-22', 1, 'cgv', 1, '홍길동'),
-       (2, '2023-09-23', 2, '롯데시네마', 2, '김이화'),
-       (3, '2023-09-24', 1, 'cgv', 3, '김춘삼'),
-       (4, '2023-09-25', 3, '메가박스', 1, '김이화');
+INSERT INTO reservation (date, theater_id, customer_id)
+VALUES ('2023-09-22', 1, 1),
+       ('2023-09-22', 2, 2),
+       ('2023-09-22', 1, 3),
+       ('2023-09-25', 3, 1);
        
-INSERT INTO customer (id, name, email)
-VALUES (1, '홍길동', 'customer1@gmail.com'),
-       (2, '김이화', 'customer2@gmail.com'),
-       (3, '김춘삼', 'customer3@gmail.com');
+INSERT INTO customer (name, email)
+VALUES ('홍길동', 'customer1@gmail.com'),
+       ('김이화', 'customer2@gmail.com'),
+       ('김춘삼', 'customer3@gmail.com');
        
 
 
