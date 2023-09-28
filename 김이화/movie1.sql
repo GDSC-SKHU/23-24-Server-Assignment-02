@@ -1,3 +1,21 @@
+CREATE TABLE theater(
+id INTEGER PRIMARY KEY AUTO_INCREMENT,
+name VARCHAR(45) NOT NULL,
+location VARCHAR(45) NOT NULL);
+
+CREATE TABLE customer(
+id INTEGER PRIMARY KEY AUTO_INCREMENT,
+name VARCHAR(45) NOT NULL,
+email VARCHAR(45) NOT NULL);
+
+CREATE TABLE reservation(
+id INTEGER PRIMARY KEY AUTO_INCREMENT,
+date VARCHAR(45) NOT NULL,
+theater_id INTEGER, 
+customer_id INTEGER,
+FOREIGN KEY (theater_id) REFERENCES theater(id),
+FOREIGN KEY (customer_id) REFERENCES customer(id));
+
 insert 
 	 into theater(name, location)
 values ('cgv', '서울'),
